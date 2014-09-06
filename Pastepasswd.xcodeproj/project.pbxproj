@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		56243B4D193E606900615661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56243B4C193E606900615661 /* AppDelegate.swift */; };
+		56243B4D193E606900615661 /* PPAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56243B4C193E606900615661 /* PPAppDelegate.swift */; };
 		56243B4F193E606900615661 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56243B4E193E606900615661 /* Images.xcassets */; };
 		56243B5B193E606A00615661 /* PastepasswdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56243B5A193E606A00615661 /* PastepasswdTests.swift */; };
+		56243B65193E60FC00615661 /* PPPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56243B64193E60FC00615661 /* PPPasswordViewController.swift */; };
+		5653C02C19A8B8BC002B8876 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5653C02B19A8B8BC002B8876 /* Utils.m */; };
+		5668CE4E19BB796700C7382D /* PPPastepasswdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5668CE4D19BB796700C7382D /* PPPastepasswdViewController.swift */; };
+		5682373019A504E500D98E14 /* PPPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682372F19A504E500D98E14 /* PPPasswordView.swift */; };
+		568990A119A9EB4F00DE0F41 /* PPSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568990A019A9EB4F00DE0F41 /* PPSettingsTableViewCell.swift */; };
+		569096E919B31E7900B6B309 /* PPPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569096E819B31E7900B6B309 /* PPPasswordController.swift */; };
+		56E79646193F13800048DDBB /* PPPSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E79645193F13800048DDBB /* PPPSettingsTableViewController.swift */; };
+		860A03672CA6460C9AE78D71 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C1F10DC02E47A190E3588B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,13 +31,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43C1F10DC02E47A190E3588B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		56243B47193E606900615661 /* Pastepasswd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pastepasswd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56243B4B193E606900615661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56243B4C193E606900615661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		56243B4C193E606900615661 /* PPAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPAppDelegate.swift; sourceTree = "<group>"; };
 		56243B4E193E606900615661 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		56243B54193E606A00615661 /* PastepasswdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PastepasswdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56243B59193E606A00615661 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56243B5A193E606A00615661 /* PastepasswdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastepasswdTests.swift; sourceTree = "<group>"; };
+		56243B64193E60FC00615661 /* PPPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPasswordViewController.swift; sourceTree = "<group>"; };
+		5653C02A19A8B8BC002B8876 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		5653C02B19A8B8BC002B8876 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		5668CE4D19BB796700C7382D /* PPPastepasswdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPastepasswdViewController.swift; sourceTree = "<group>"; };
+		5682372F19A504E500D98E14 /* PPPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPasswordView.swift; sourceTree = "<group>"; };
+		568990A019A9EB4F00DE0F41 /* PPSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		569096E819B31E7900B6B309 /* PPPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPasswordController.swift; sourceTree = "<group>"; };
+		56E79645193F13800048DDBB /* PPPSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPSettingsTableViewController.swift; sourceTree = "<group>"; };
+		56F36DC219A4C01A00D233CF /* Pastepasswd-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pastepasswd-Bridging-Header.h"; sourceTree = "<group>"; };
+		9335A7685B7F499FAADBD9C4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860A03672CA6460C9AE78D71 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,9 +73,13 @@
 		56243B3E193E606900615661 = {
 			isa = PBXGroup;
 			children = (
+				562D565219B306C9000D89DF /* Vendor */,
 				56243B49193E606900615661 /* Pastepasswd */,
 				56243B57193E606A00615661 /* PastepasswdTests */,
 				56243B48193E606900615661 /* Products */,
+				56F36DC219A4C01A00D233CF /* Pastepasswd-Bridging-Header.h */,
+				9335A7685B7F499FAADBD9C4 /* Pods.xcconfig */,
+				FC65A2ACAFCC4D48B50DBE19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,17 @@
 		56243B49193E606900615661 /* Pastepasswd */ = {
 			isa = PBXGroup;
 			children = (
-				56243B4C193E606900615661 /* AppDelegate.swift */,
+				56243B4C193E606900615661 /* PPAppDelegate.swift */,
 				56243B4E193E606900615661 /* Images.xcassets */,
 				56243B4A193E606900615661 /* Supporting Files */,
+				56243B64193E60FC00615661 /* PPPasswordViewController.swift */,
+				56E79645193F13800048DDBB /* PPPSettingsTableViewController.swift */,
+				5682372F19A504E500D98E14 /* PPPasswordView.swift */,
+				5653C02A19A8B8BC002B8876 /* Utils.h */,
+				5653C02B19A8B8BC002B8876 /* Utils.m */,
+				568990A019A9EB4F00DE0F41 /* PPSettingsTableViewCell.swift */,
+				569096E819B31E7900B6B309 /* PPPasswordController.swift */,
+				5668CE4D19BB796700C7382D /* PPPastepasswdViewController.swift */,
 			);
 			path = Pastepasswd;
 			sourceTree = "<group>";
@@ -103,6 +135,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		562D565219B306C9000D89DF /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		FC65A2ACAFCC4D48B50DBE19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43C1F10DC02E47A190E3588B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56243B5E193E606A00615661 /* Build configuration list for PBXNativeTarget "Pastepasswd" */;
 			buildPhases = (
+				FA28F2B9314C4C1CBB6B4492 /* Check Pods Manifest.lock */,
 				56243B43193E606900615661 /* Sources */,
 				56243B44193E606900615661 /* Frameworks */,
 				56243B45193E606900615661 /* Resources */,
+				377E1CF4198F4C2FA1AE11EC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,6 +201,7 @@
 				TargetAttributes = {
 					56243B46193E606900615661 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = A22EW7MN8G;
 					};
 					56243B53193E606A00615661 = {
 						CreatedOnToolsVersion = 6.0;
@@ -195,12 +245,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		377E1CF4198F4C2FA1AE11EC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA28F2B9314C4C1CBB6B4492 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		56243B43193E606900615661 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56243B4D193E606900615661 /* AppDelegate.swift in Sources */,
+				56E79646193F13800048DDBB /* PPPSettingsTableViewController.swift in Sources */,
+				56243B4D193E606900615661 /* PPAppDelegate.swift in Sources */,
+				5682373019A504E500D98E14 /* PPPasswordView.swift in Sources */,
+				5653C02C19A8B8BC002B8876 /* Utils.m in Sources */,
+				569096E919B31E7900B6B309 /* PPPasswordController.swift in Sources */,
+				568990A119A9EB4F00DE0F41 /* PPSettingsTableViewCell.swift in Sources */,
+				5668CE4E19BB796700C7382D /* PPPastepasswdViewController.swift in Sources */,
+				56243B65193E60FC00615661 /* PPPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,23 +392,34 @@
 		};
 		56243B5F193E606A00615661 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9335A7685B7F499FAADBD9C4 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Pastepasswd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pastepasswd-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		56243B60193E606A00615661 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9335A7685B7F499FAADBD9C4 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Pastepasswd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pastepasswd-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -377,6 +478,7 @@
 				56243B60193E606A00615661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56243B61193E606A00615661 /* Build configuration list for PBXNativeTarget "PastepasswdTests" */ = {
 			isa = XCConfigurationList;
@@ -385,6 +487,7 @@
 				56243B63193E606A00615661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
