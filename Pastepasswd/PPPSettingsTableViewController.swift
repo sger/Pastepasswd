@@ -190,7 +190,7 @@ class PPPSettingsTableViewController: UITableViewController, MFMailComposeViewCo
                 var userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
                 let modeValue:String = userDefaults.objectForKey("mode") as String
                 
-                println(modeValue)
+                //println(modeValue)
                 
                 if modeValue == "1" {
                     switchMode.setOn(true, animated: true)

@@ -509,13 +509,13 @@ class PPPasswordViewController: UIViewController {
          let pc:PPPasswordController = PPPasswordController.sharedInstance
          var password:String
     
-        println(modeValue)
+        //println(modeValue)
         if modeValue == "1" {
             password = pc.generatePassword(Int(length!), typeLetter: typeLetterValue!, typeChar: typeCharValue!, avoid: allowRepeat!, ambiguous: ambiguous!)
-             println("mode1: " + password)
+             //println("mode1: " + password)
         } else {
             password = pc.generatePassword(Int(length!), digitsLength: Int(digitsValue!), symbolsLength: Int(symbolValue!), avoid: allowRepeat!, ambiguous: ambiguous!)
-            println("mode2: " + password)
+            //println("mode2: " + password)
         }
         
         if clipboardMode! {
@@ -636,11 +636,38 @@ class PPPasswordViewController: UIViewController {
     }
     
     // MARK: Display Text
-    
+
     func displayText(value:NSString) {
         passwordView!.passwordSecureTextField!.text = value
         
-        passwordView!.attributedLabel!.setText(value, afterInheritingLabelAttributesAndConfiguringWithBlock: { (mutableAttributedString) -> NSMutableAttributedString! in
+        //update switch to UILabel
+        let attributedText = NSMutableAttributedString()
+        var attributedString = NSMutableAttributedString(string: value)
+
+        var searchedRange:NSRange = NSMakeRange(0, value.length)
+        
+        var error: NSError?
+        var regexNumbers:NSRegularExpression = NSRegularExpression.regularExpressionWithPattern("\\d+", options: nil, error: &error)!
+        var  matches:NSArray = regexNumbers.matchesInString(value, options: nil, range: searchedRange) as Array<NSTextCheckingResult>
+        
+        for match in matches {
+           attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.pastepasswdNumbersColor(), range: match.range)
+           
+        }
+        
+        var regexLetters:NSRegularExpression = NSRegularExpression.regularExpressionWithPattern("[a-zA-Z]+", options: nil, error: &error)!
+        var  matchesLetters:NSArray = regexLetters.matchesInString(value, options: nil, range: searchedRange) as Array<NSTextCheckingResult>
+        
+        for match in matchesLetters {
+            attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.pastepasswdMainColor(), range: match.range)
+        }
+
+        attributedText.appendAttributedString(attributedString)
+        passwordView?.passwordLabel?.attributedText = attributedText
+        
+    
+        //TTTAttributedLabel is not working with iOS 8
+        /*passwordView!.attributedLabel!.setText(value, afterInheritingLabelAttributesAndConfiguringWithBlock: { (mutableAttributedString) -> NSMutableAttributedString! in
             
             var searchedRange:NSRange = NSMakeRange(0, value.length)
             
@@ -659,6 +686,6 @@ class PPPasswordViewController: UIViewController {
                 mutableAttributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.pastepasswdMainColor(), range: match.range)
             }
             return mutableAttributedString;
-        })
+        })*/
     }
 }

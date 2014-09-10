@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C8E7DD5D-0492-48AD-B4F2-F7EAEDAD1BD2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Pastepasswd</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EED7E734076CD0D27BDAF6CD13FB2CA76B4A284C</key>
+		<string>https://github.com/sger/Pastepasswd.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Pastepasswd.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EED7E734076CD0D27BDAF6CD13FB2CA76B4A284C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sger/Pastepasswd.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EED7E734076CD0D27BDAF6CD13FB2CA76B4A284C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EED7E734076CD0D27BDAF6CD13FB2CA76B4A284C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Pastepasswd</string>
+		</dict>
+	</array>
+</dict>
+</plist>

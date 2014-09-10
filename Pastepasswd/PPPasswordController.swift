@@ -67,7 +67,7 @@ class PPPasswordController: NSObject {
         var targetLength:Int = Int(length)
         
         if !avoid {
-            println(avoid)
+            //println(avoid)
             var chars:NSMutableArray = NSMutableArray(capacity: selectedSet.length)
             
             for var i:Int = 0; i < selectedSet.length; i++ {
@@ -82,7 +82,7 @@ class PPPasswordController: NSObject {
             }
             
             result = choice.allObjects.combine("")
-            println(result)
+            //println(result)
         } else {
             
             for var i:Int = 0; i < targetLength; i++ {
@@ -90,7 +90,7 @@ class PPPasswordController: NSObject {
                 result = result.stringByAppendingFormat(selectedSet.substringWithRange(NSRange(location: location, length: 1)))
             }
             
-            println(result)
+            //println(result)
         }
         checkForDuplicateChars(result)
         return result
@@ -145,21 +145,21 @@ class PPPasswordController: NSObject {
         
         if totalChars > 0 {
             
-            println(avoid)
+            //println(avoid)
             
             if !avoid {
                 var chars:[String] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t","u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S","T","U","V", "W", "X", "Y", "Z"]
                 var choiceChars:[String] = []
                 
-                var test:NSMutableSet = NSMutableSet()
+                var selectedChars:NSMutableSet = NSMutableSet()
                 
                 while(choiceChars.count < totalChars) {
                     let randomIndex = Int(arc4random_uniform(UInt32(chars.count)))
                     choiceChars.append(chars[randomIndex])
-                    test.addObject(chars[randomIndex])
+                    selectedChars.addObject(chars[randomIndex])
                 }
                 
-                var non:NSString = test.allObjects.combine("")
+                var non:NSString = selectedChars.allObjects.combine("")
                 
                 selectedSet = selectedSet.stringByAppendingString(non);
                 
@@ -184,10 +184,10 @@ class PPPasswordController: NSObject {
             }
         }
         
-        println(selectedSet)
+        //println(selectedSet)
         
         var str:NSString = Utils.randomizeStringWith(selectedSet)
-        println("result: " +  str)
+        //println("result: " +  str)
         
         //check for duplicates
         checkForDuplicateChars(str)
@@ -204,7 +204,7 @@ class PPPasswordController: NSObject {
                 seenCharacters.addObject(substring)
                 resultString.appendString(substring)
             } else {
-                println("duplicates " + substring)
+                //println("duplicates " + substring)
             }
         }
     }

@@ -28,6 +28,8 @@ class PPPasswordView: UIView {
     var secureTextContainer:UIView?
     var attributedLabel:TTTAttributedLabel?
     
+    var passwordLabel:UILabel?
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -51,6 +53,7 @@ class PPPasswordView: UIView {
         attributedLabel?.textAlignment = NSTextAlignment.Center
         normalTextContainer?.addSubview(attributedLabel!)
         attributedLabel?.text = ""
+        attributedLabel?.hidden = true
         
         passwordSecureTextField = UITextField(frame: CGRectMake(0, 0, self.frame.size.width, PPPasswordView.height()))
         passwordSecureTextField?.autoresizingMask = UIViewAutoresizing.FlexibleWidth
@@ -60,6 +63,14 @@ class PPPasswordView: UIView {
         passwordSecureTextField?.textColor = UIColor(red: 250.0 / 255.0, green: 250.0 / 255.0, blue: 250.0 / 255.0, alpha: 1)
         passwordSecureTextField?.secureTextEntry = true
         secureTextContainer?.addSubview(passwordSecureTextField!)
+        
+        passwordLabel = UILabel(frame: CGRectMake(0, 0, self.frame.size.width, PPPasswordView.height()))
+        passwordLabel?.textColor = UIColor(red: 133.0 / 255, green: 155.0 / 255, blue: 172.0 / 255, alpha: 1)
+        passwordLabel?.backgroundColor = UIColor.clearColor()
+        passwordLabel?.numberOfLines = 0
+        passwordLabel?.font = UIFont(name: "Helvetica", size: 17)
+        passwordLabel?.textAlignment = NSTextAlignment.Center
+        normalTextContainer?.addSubview(passwordLabel!)
     }
 
     func slideOut() {

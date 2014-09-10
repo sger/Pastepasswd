@@ -13,6 +13,7 @@
 		56243B65193E60FC00615661 /* PPPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56243B64193E60FC00615661 /* PPPasswordViewController.swift */; };
 		5653C02C19A8B8BC002B8876 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5653C02B19A8B8BC002B8876 /* Utils.m */; };
 		5668CE4E19BB796700C7382D /* PPPastepasswdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5668CE4D19BB796700C7382D /* PPPastepasswdViewController.swift */; };
+		567F8A9819C0686D001E8776 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 567F8A9719C0686D001E8776 /* Crashlytics.framework */; };
 		5682373019A504E500D98E14 /* PPPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682372F19A504E500D98E14 /* PPPasswordView.swift */; };
 		568990A119A9EB4F00DE0F41 /* PPSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568990A019A9EB4F00DE0F41 /* PPSettingsTableViewCell.swift */; };
 		569096E919B31E7900B6B309 /* PPPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569096E819B31E7900B6B309 /* PPPasswordController.swift */; };
@@ -43,6 +44,7 @@
 		5653C02A19A8B8BC002B8876 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		5653C02B19A8B8BC002B8876 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		5668CE4D19BB796700C7382D /* PPPastepasswdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPastepasswdViewController.swift; sourceTree = "<group>"; };
+		567F8A9719C0686D001E8776 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics/Crashlytics.framework; sourceTree = "<group>"; };
 		5682372F19A504E500D98E14 /* PPPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPasswordView.swift; sourceTree = "<group>"; };
 		568990A019A9EB4F00DE0F41 /* PPSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		569096E819B31E7900B6B309 /* PPPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPasswordController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				567F8A9819C0686D001E8776 /* Crashlytics.framework in Frameworks */,
 				860A03672CA6460C9AE78D71 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5613BF9719C05FFA006D6BF3 /* Obj-C */ = {
+			isa = PBXGroup;
+			children = (
+				5653C02A19A8B8BC002B8876 /* Utils.h */,
+				5653C02B19A8B8BC002B8876 /* Utils.m */,
+			);
+			name = "Obj-C";
+			sourceTree = "<group>";
+		};
 		56243B3E193E606900615661 = {
 			isa = PBXGroup;
 			children = (
@@ -96,13 +108,12 @@
 			isa = PBXGroup;
 			children = (
 				56243B4C193E606900615661 /* PPAppDelegate.swift */,
+				5613BF9719C05FFA006D6BF3 /* Obj-C */,
 				56243B4E193E606900615661 /* Images.xcassets */,
 				56243B4A193E606900615661 /* Supporting Files */,
 				56243B64193E60FC00615661 /* PPPasswordViewController.swift */,
 				56E79645193F13800048DDBB /* PPPSettingsTableViewController.swift */,
 				5682372F19A504E500D98E14 /* PPPasswordView.swift */,
-				5653C02A19A8B8BC002B8876 /* Utils.h */,
-				5653C02B19A8B8BC002B8876 /* Utils.m */,
 				568990A019A9EB4F00DE0F41 /* PPSettingsTableViewCell.swift */,
 				569096E819B31E7900B6B309 /* PPPasswordController.swift */,
 				5668CE4D19BB796700C7382D /* PPPastepasswdViewController.swift */,
@@ -138,8 +149,17 @@
 		562D565219B306C9000D89DF /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				567F8A9919C06872001E8776 /* Crashlytics */,
 			);
 			name = Vendor;
+			sourceTree = "<group>";
+		};
+		567F8A9919C06872001E8776 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				567F8A9719C0686D001E8776 /* Crashlytics.framework */,
+			);
+			name = Crashlytics;
 			sourceTree = "<group>";
 		};
 		FC65A2ACAFCC4D48B50DBE19 /* Frameworks */ = {
@@ -162,6 +182,8 @@
 				56243B44193E606900615661 /* Frameworks */,
 				56243B45193E606900615661 /* Resources */,
 				377E1CF4198F4C2FA1AE11EC /* Copy Pods Resources */,
+				5613BF9619C05F49006D6BF3 /* ShellScript */,
+				567F8A9A19C06897001E8776 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -260,6 +282,32 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5613BF9619C05F49006D6BF3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# xcode-build-bump.sh\n# @desc Auto-increment the build number every time the project is run.\n# @usage\n# 1. Select: your Target in Xcode\n# 2. Select: Build Phases Tab\n# 3. Select: Add Build Phase -> Add Run Script\n# 4. Paste code below in to new \"Run Script\" section\n# 5. Drag the \"Run Script\" below \"Link Binaries With Libraries\"\n# 6. Insure that your starting build number is set to a whole integer and not a float (e.g. 1, not 1.0)\n\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+		567F8A9A19C06897001E8776 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Vendor/Crashlytics/Crashlytics.framework/run 88300c2a59d5352c19153a01c6671ab3339d663e 6365883efd310f74cbfc6417d341fef3d8ffdc069ab00826bde1b7645eaf54ed";
 		};
 		FA28F2B9314C4C1CBB6B4492 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -398,6 +446,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/Crashlytics",
+				);
 				INFOPLIST_FILE = Pastepasswd/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -415,6 +467,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/Crashlytics",
+				);
 				INFOPLIST_FILE = Pastepasswd/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

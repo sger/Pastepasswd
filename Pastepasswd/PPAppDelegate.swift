@@ -21,7 +21,9 @@
 // THE SOFTWARE.
 
 import UIKit
+import Crashlytics
 
+//Extensions Array
 extension Array {
     func combine(separator: String) -> String{
         var str : String = ""
@@ -65,6 +67,7 @@ class PPAppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        Crashlytics.startWithAPIKey("88300c2a59d5352c19153a01c6671ab3339d663e")
         var passwordViewController:PPPasswordViewController = PPPasswordViewController()
         var navigationController:UINavigationController = UINavigationController(rootViewController: passwordViewController);
         
@@ -83,24 +86,14 @@ class PPAppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(application: UIApplication) {}
 
-    }
+    func applicationDidEnterBackground(application: UIApplication) {}
 
-    func applicationDidEnterBackground(application: UIApplication) {
-        
-    }
+    func applicationWillEnterForeground(application: UIApplication) {}
 
-    func applicationWillEnterForeground(application: UIApplication) {
-    
-    }
+    func applicationDidBecomeActive(application: UIApplication) {}
 
-    func applicationDidBecomeActive(application: UIApplication) {
-        
-    }
-
-    func applicationWillTerminate(application: UIApplication) {
-        
-    }
+    func applicationWillTerminate(application: UIApplication) {}
 }
 
