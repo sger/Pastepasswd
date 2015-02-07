@@ -56,7 +56,7 @@ extension UIColor {
 //Extensions UIFont
 extension UIFont {
     class func mediumFontWithSize(size:CGFloat) -> UIFont {
-        return UIFont(name: "Avenir-Medium", size: size)
+        return UIFont(name: "Avenir-Medium", size: size)!
     }
 }
 
@@ -78,8 +78,8 @@ class PPAppDelegate: UIResponder, UIApplicationDelegate {
         var navigationBar:UINavigationBar = UINavigationBar.appearance()
         navigationBar.barTintColor = UIColor(hue: 0.52, saturation: 0.65, brightness: 0.79, alpha: 1.00)
         navigationBar.tintColor = UIColor(white: 1.0, alpha: 0.5)
-        navigationBar.titleTextAttributes  = [NSForegroundColorAttributeName:UIColor.whiteColor(),
-            NSFontAttributeName:UIFont(name: "Avenir-Heavy", size: 20.0)]
+        //navigationBar.titleTextAttributes  = [NSForegroundColorAttributeName:UIColor.whiteColor(),
+           // NSFontAttributeName:UIFont(name: "Avenir-Heavy", size: 20.0)]
     
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         

@@ -51,7 +51,7 @@ class PPPastepasswdViewController: UIViewController {
         var backBarButtonItem:UIBarButtonItem = UIBarButtonItem(customView: backButton)
         self.navigationItem.leftBarButtonItem = backBarButtonItem
         
-        var infoDictionary:NSDictionary = NSBundle.mainBundle().infoDictionary
+        var infoDictionary:NSDictionary = NSBundle.mainBundle().infoDictionary!
         var shortVersion:String = infoDictionary.objectForKey("CFBundleShortVersionString") as String
         var build:String = infoDictionary.objectForKey("CFBundleVersion") as String
         

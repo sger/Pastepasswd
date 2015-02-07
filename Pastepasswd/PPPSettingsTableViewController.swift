@@ -68,7 +68,7 @@ class PPPSettingsTableViewController: UITableViewController, MFMailComposeViewCo
         var titleMainView:UILabel = UILabel(frame: CGRectMake(0, 0, 320, 44))
         titleMainView.backgroundColor = UIColor.clearColor()
         titleMainView.textColor = UIColor.whiteColor()
-        var font:UIFont = UIFont(name: "Avenir-Medium", size: 20)
+        var font:UIFont = UIFont(name: "Avenir-Medium", size: 20)!
         titleMainView.font = font
         titleMainView.text = "Settings"
         titleMainView.sizeToFit()

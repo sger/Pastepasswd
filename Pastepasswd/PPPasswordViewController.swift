@@ -179,7 +179,7 @@ class PPPasswordViewController: UIViewController {
         
         //start mode 1
         let attributes:NSDictionary = NSDictionary(objectsAndKeys:
-            UIFont(name: "Avenir-Medium", size: 16.0), NSFontAttributeName,
+            UIFont(name: "Avenir-Medium", size: 16.0)!, NSFontAttributeName,
             UIColor.pastepasswdMainColor(), NSForegroundColorAttributeName)
         
         let lettersArr:Array = ["abc", "aBc", "ABC"]
@@ -406,7 +406,7 @@ class PPPasswordViewController: UIViewController {
         clipboardSwitchRect.origin.y = view7.frame.origin.y + view7.frame.size.height / 2.0 - clipboardSwitch!.frame.size.height / 2.0;
         clipboardSwitch!.frame = clipboardSwitchRect;
         
-        var settingsImage:UIImage = UIImage(named: "settings")
+        var settingsImage:UIImage = UIImage(named: "settings")!
         var settingsButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         settingsButton.frame = CGRectMake(0, 0, 28, 28);
         settingsButton.setBackgroundImage(settingsImage, forState: UIControlState.Normal)
@@ -420,7 +420,7 @@ class PPPasswordViewController: UIViewController {
         var titleMainView:UILabel = UILabel(frame: CGRectMake(0, 0, 320, 44))
         titleMainView.backgroundColor = UIColor.clearColor()
         titleMainView.textColor = UIColor.whiteColor()
-        var font:UIFont = UIFont(name: "Avenir-Medium", size: 20)
+        var font:UIFont = UIFont(name: "Avenir-Medium", size: 20)!
         titleMainView.font = font
         titleMainView.text = "Pastepasswd"
         titleMainView.sizeToFit()
@@ -647,7 +647,8 @@ class PPPasswordViewController: UIViewController {
         var searchedRange:NSRange = NSMakeRange(0, value.length)
         
         var error: NSError?
-        var regexNumbers:NSRegularExpression = NSRegularExpression.regularExpressionWithPattern("\\d+", options: nil, error: &error)!
+        //var regexNumbers:NSRegularExpression = NSRegularExpression.regularExpressionWithPattern("\\d+", options: nil, error: &error)!
+        var regexNumbers:NSRegularExpression = NSRegularExpression(pattern: "\\d+", options: nil, error: &error)!
         var  matches:NSArray = regexNumbers.matchesInString(value, options: nil, range: searchedRange) as Array<NSTextCheckingResult>
         
         for match in matches {
@@ -655,7 +656,8 @@ class PPPasswordViewController: UIViewController {
            
         }
         
-        var regexLetters:NSRegularExpression = NSRegularExpression.regularExpressionWithPattern("[a-zA-Z]+", options: nil, error: &error)!
+        //var regexLetters:NSRegularExpression = NSRegularExpression.regularExpressionWithPattern("[a-zA-Z]+", options: nil, error: &error)!
+        var regexLetters:NSRegularExpression = NSRegularExpression(pattern: "[a-zA-Z]+", options: nil, error: &error)!
         var  matchesLetters:NSArray = regexLetters.matchesInString(value, options: nil, range: searchedRange) as Array<NSTextCheckingResult>
         
         for match in matchesLetters {
