@@ -30,7 +30,7 @@ class PPSettingsTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.textLabel.hidden = true
+        self.textLabel!.hidden = true
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.mainScreen().scale
         self.selectionStyle = UITableViewCellSelectionStyle.None

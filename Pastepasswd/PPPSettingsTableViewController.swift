@@ -27,9 +27,9 @@ class PPPSettingsTableViewController: UITableViewController, MFMailComposeViewCo
     
     // MARK: Initializers
     
-    override init() {
+    /*override init() {
          super.init(style: UITableViewStyle.Grouped)
-    }
+    }*/
     
     override init(style: UITableViewStyle) {
         super.init(style: style)
@@ -57,7 +57,7 @@ class PPPSettingsTableViewController: UITableViewController, MFMailComposeViewCo
             }
         }
         
-        var doneButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        var doneButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         doneButton.frame = CGRectMake(0, 0, 45.0, 22.0);
         doneButton.setTitle("Done", forState: UIControlState.Normal)
         doneButton.addTarget(self, action: "close:", forControlEvents: UIControlEvents.TouchDown)
@@ -101,7 +101,7 @@ class PPPSettingsTableViewController: UITableViewController, MFMailComposeViewCo
                     mailer.setSubject("Feedback")
                     mailer.setToRecipients(["pastepasswd@spirosgerokostas.com"])
                     let titleTextDict:NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.mediumFontWithSize(16.0)]
-                    mailer.navigationBar.titleTextAttributes = titleTextDict
+                    mailer.navigationBar.titleTextAttributes = titleTextDict as [NSObject : AnyObject]
                     mailer.navigationBar.tintColor = UIColor.whiteColor()
                     self.presentViewController(mailer, animated: true, completion: nil)
                 } else {
@@ -164,7 +164,7 @@ class PPPSettingsTableViewController: UITableViewController, MFMailComposeViewCo
 //    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         let label:UILabel = UILabel(frame: CGRectMake(14.0, 12.0, self.view.frame.size.width, 20.0))
@@ -188,7 +188,7 @@ class PPPSettingsTableViewController: UITableViewController, MFMailComposeViewCo
                 cell.contentView.addSubview(switchMode)
                 
                 var userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-                let modeValue:String = userDefaults.objectForKey("mode") as String
+                let modeValue:String = userDefaults.objectForKey("mode") as! String
                 
                 //println(modeValue)
                 

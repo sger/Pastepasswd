@@ -93,7 +93,7 @@ class PPPasswordController: NSObject {
             //println(result)
         }
         checkForDuplicateChars(result)
-        return result
+        return result as String
     }
 
     
@@ -161,7 +161,7 @@ class PPPasswordController: NSObject {
                 
                 var non:NSString = selectedChars.allObjects.combine("")
                 
-                selectedSet = selectedSet.stringByAppendingString(non);
+                selectedSet = selectedSet.stringByAppendingString(non as String);
                 
             } else {
                 
@@ -180,19 +180,19 @@ class PPPasswordController: NSObject {
                     let location = Int(arc4random_uniform(UInt32(selectedChars.length)))
                     chars = chars.stringByAppendingFormat(selectedChars.substringWithRange(NSRange(location: location, length: 1)))
                 }
-                selectedSet = selectedSet.stringByAppendingString(chars)
+                selectedSet = selectedSet.stringByAppendingString(chars as String)
             }
         }
         
         //println(selectedSet)
         
-        var str:NSString = Utils.randomizeStringWith(selectedSet)
+        var str:NSString = Utils.randomizeStringWith(selectedSet as String)
         //println("result: " +  str)
         
         //check for duplicates
         checkForDuplicateChars(str)
         
-        return str
+        return str as String
     }
     
     func checkForDuplicateChars(value:NSString) {

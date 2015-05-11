@@ -61,11 +61,22 @@ extension UIFont {
 }
 
 @UIApplicationMain
-class PPAppDelegate: UIResponder, UIApplicationDelegate {
+class PPAppDelegate: UIResponder, UIApplicationDelegate, AppsfireAdSDKDelegate {
                             
     var window: UIWindow?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        AppsfireAdSDK.setDelegate(self)
+        AppsfireAdSDK.setDebugModeEnabled(false)
+        
+        var error:NSError?
+        
+        error = AppsfireSDK.connectWithSDKToken("022E8B517DDBE2CE8469F82BA7A582B9", secretKey: "a17a61f9c42de38592ef0e89ea7e8c40", features: AFSDKFeature.Monetization, parameters: nil)
+        
+        if error != nil {
+            println("error \(error)")
+        }
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         Crashlytics.startWithAPIKey("88300c2a59d5352c19153a01c6671ab3339d663e")
         var passwordViewController:PPPasswordViewController = PPPasswordViewController()
@@ -79,12 +90,14 @@ class PPAppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.barTintColor = UIColor(hue: 0.52, saturation: 0.65, brightness: 0.79, alpha: 1.00)
         navigationBar.tintColor = UIColor(white: 1.0, alpha: 0.5)
         //navigationBar.titleTextAttributes  = [NSForegroundColorAttributeName:UIColor.whiteColor(),
-           // NSFontAttributeName:UIFont(name: "Avenir-Heavy", size: 20.0)]
-    
+        // NSFontAttributeName:UIFont(name: "Avenir-Heavy", size: 20.0)]
+        
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
         return true
     }
+    
+ 
     
     func applicationWillResignActive(application: UIApplication) {}
 
@@ -95,5 +108,20 @@ class PPAppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {}
 
     func applicationWillTerminate(application: UIApplication) {}
+    
+    // MARK: Appsfire Ad SDK Delegate
+    
+    func modalAdsRefreshedAndAvailable() {
+        if AppsfireAdSDK.isThereAModalAdAvailableForType(AFAdSDKModalType.Sushi) == AFAdSDKAdAvailability.Yes && !AppsfireAdSDK.isModalAdDisplayed() {
+            
+            AppsfireAdSDK.requestModalAd(AFAdSDKModalType.Sushi, withController: UIApplication.sharedApplication().keyWindow?.rootViewController, withDelegate: nil)
+            
+        }
+    }
+    
+    func modalAdsRefreshedAndNotAvailable() {
+        
+    }
+    
 }
 

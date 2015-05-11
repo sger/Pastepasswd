@@ -42,7 +42,7 @@ class PPPastepasswdViewController: UIViewController {
         
         self.navigationItem.titleView = title;
         
-        var backButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        var backButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         backButton.frame = CGRectMake(0, 0, 13.0, 22.0);
         backButton.setBackgroundImage(UIImage(named: "back-view"), forState: UIControlState.Normal)
         backButton.setBackgroundImage(UIImage(named: "back-view"), forState: UIControlState.Highlighted)
@@ -52,8 +52,8 @@ class PPPastepasswdViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = backBarButtonItem
         
         var infoDictionary:NSDictionary = NSBundle.mainBundle().infoDictionary!
-        var shortVersion:String = infoDictionary.objectForKey("CFBundleShortVersionString") as String
-        var build:String = infoDictionary.objectForKey("CFBundleVersion") as String
+        var shortVersion:String = infoDictionary.objectForKey("CFBundleShortVersionString") as! String
+        var build:String = infoDictionary.objectForKey("CFBundleVersion") as! String
         
         var version:UILabel = UILabel(frame: CGRectMake(10.0, 80.0, self.view.frame.size.width - 20.0, 65.0))
         version.accessibilityLabel = "Version " + shortVersion + "(" + build + ")"

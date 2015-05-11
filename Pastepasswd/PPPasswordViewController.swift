@@ -166,7 +166,7 @@ class PPPasswordViewController: UIViewController {
         lengthValueLabel = TTTAttributedLabel(frame: CGRectZero)
         lengthValueLabel?.font = UIFont.mediumFontWithSize(16.0)
         lengthValueLabel?.textColor = UIColor.pastepasswdTextColor()
-        lengthValueLabel?.text = NSString(format: "%.0f", lengthSlider!.value)
+        lengthValueLabel?.text = NSString(format: "%.0f", lengthSlider!.value) as String
         lengthValueLabel?.sizeToFit()
         lengthValueLabel?.textAlignment = NSTextAlignment.Center
         self.view.addSubview(lengthValueLabel!)
@@ -188,7 +188,7 @@ class PPPasswordViewController: UIViewController {
         letters?.tintColor = UIColor.pastepasswdMainColor()
         letters?.selectedSegmentIndex = 1
         letters?.addTarget(self, action: "selectTypeOfLetter:", forControlEvents: UIControlEvents.ValueChanged)
-        letters?.setTitleTextAttributes(attributes, forState: UIControlState.Normal)
+        letters?.setTitleTextAttributes(attributes as [NSObject : AnyObject], forState: UIControlState.Normal)
         self.view.addSubview(letters!)
         
         var lettersRect:CGRect = letters!.frame
@@ -204,7 +204,7 @@ class PPPasswordViewController: UIViewController {
         typeChar?.tintColor = UIColor.pastepasswdMainColor()
         typeChar?.selectedSegmentIndex = 1
         typeChar?.addTarget(self, action: "selectTypeOfChar:", forControlEvents: UIControlEvents.ValueChanged)
-        typeChar?.setTitleTextAttributes(attributes, forState: UIControlState.Normal)
+        typeChar?.setTitleTextAttributes(attributes as [NSObject : AnyObject], forState: UIControlState.Normal)
         self.view.addSubview(typeChar!)
         
         var typeCharRect:CGRect = typeChar!.frame
@@ -249,7 +249,7 @@ class PPPasswordViewController: UIViewController {
         digitsValueLabel?.numberOfLines = 0
         digitsValueLabel?.font = UIFont.mediumFontWithSize(16.0)
         digitsValueLabel?.textColor = UIColor.pastepasswdTextColor()
-        digitsValueLabel?.text = NSString(format: "%.0f", digitsSlider!.value)
+        digitsValueLabel?.text = NSString(format: "%.0f", digitsSlider!.value) as String
         digitsValueLabel?.textAlignment = NSTextAlignment.Center
         digitsValueLabel?.sizeToFit()
         self.view.addSubview(digitsValueLabel!)
@@ -296,7 +296,7 @@ class PPPasswordViewController: UIViewController {
         symbolValueLabel?.numberOfLines = 0
         symbolValueLabel?.font = UIFont.mediumFontWithSize(16.0)
         symbolValueLabel?.textColor = UIColor.pastepasswdTextColor()
-        symbolValueLabel?.text = NSString(format: "%.0f", symbolSlider!.value)
+        symbolValueLabel?.text = NSString(format: "%.0f", symbolSlider!.value) as String
         symbolValueLabel?.sizeToFit()
         symbolValueLabel?.textAlignment = NSTextAlignment.Center
         self.view.addSubview(symbolValueLabel!)
@@ -407,7 +407,7 @@ class PPPasswordViewController: UIViewController {
         clipboardSwitch!.frame = clipboardSwitchRect;
         
         var settingsImage:UIImage = UIImage(named: "settings")!
-        var settingsButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        var settingsButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         settingsButton.frame = CGRectMake(0, 0, 28, 28);
         settingsButton.setBackgroundImage(settingsImage, forState: UIControlState.Normal)
         settingsButton.setBackgroundImage(settingsImage, forState: UIControlState.Highlighted)
@@ -504,7 +504,7 @@ class PPPasswordViewController: UIViewController {
     func generatePassword() {
         
         var userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        let modeValue:String = userDefaults.objectForKey("mode") as String
+        let modeValue:String = userDefaults.objectForKey("mode") as! String
         
          let pc:PPPasswordController = PPPasswordController.sharedInstance
          var password:String
@@ -532,7 +532,7 @@ class PPPasswordViewController: UIViewController {
         var slider:UISlider = sender as UISlider
         length = slider.value
         var intLength:Int = Int(length!)
-        lengthValueLabel?.text = NSString(format: "%d", intLength)
+        lengthValueLabel?.text = NSString(format: "%d", intLength) as String
         var progressValue:Float = length! / maxChars
         passwordLength?.setProgress(progressValue, animated: true)
         
@@ -590,14 +590,14 @@ class PPPasswordViewController: UIViewController {
     func digitsSliderValue(sender:UISlider!) {
         var slider:UISlider = sender as UISlider
         digitsValue = sender.value
-        digitsValueLabel?.text = NSString(format: "%d", Int(digitsValue!))
+        digitsValueLabel?.text = NSString(format: "%d", Int(digitsValue!)) as String
         generatePassword()
     }
     
     func symbolSliderValue(sender:UISlider!) {
         var slider:UISlider = sender as UISlider
         symbolValue = sender.value
-        symbolValueLabel?.text = NSString(format: "%d", Int(symbolValue!))
+        symbolValueLabel?.text = NSString(format: "%d", Int(symbolValue!)) as String
         generatePassword()
     }
     
@@ -638,18 +638,18 @@ class PPPasswordViewController: UIViewController {
     // MARK: Display Text
 
     func displayText(value:NSString) {
-        passwordView!.passwordSecureTextField!.text = value
+        passwordView!.passwordSecureTextField!.text = value as String
         
         //update switch to UILabel
         let attributedText = NSMutableAttributedString()
-        var attributedString = NSMutableAttributedString(string: value)
+        var attributedString = NSMutableAttributedString(string: value as String)
 
         var searchedRange:NSRange = NSMakeRange(0, value.length)
         
         var error: NSError?
         //var regexNumbers:NSRegularExpression = NSRegularExpression.regularExpressionWithPattern("\\d+", options: nil, error: &error)!
         var regexNumbers:NSRegularExpression = NSRegularExpression(pattern: "\\d+", options: nil, error: &error)!
-        var  matches:NSArray = regexNumbers.matchesInString(value, options: nil, range: searchedRange) as Array<NSTextCheckingResult>
+        var  matches:NSArray = regexNumbers.matchesInString(value as String, options: nil, range: searchedRange) as! Array<NSTextCheckingResult>
         
         for match in matches {
            attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.pastepasswdNumbersColor(), range: match.range)
@@ -658,7 +658,7 @@ class PPPasswordViewController: UIViewController {
         
         //var regexLetters:NSRegularExpression = NSRegularExpression.regularExpressionWithPattern("[a-zA-Z]+", options: nil, error: &error)!
         var regexLetters:NSRegularExpression = NSRegularExpression(pattern: "[a-zA-Z]+", options: nil, error: &error)!
-        var  matchesLetters:NSArray = regexLetters.matchesInString(value, options: nil, range: searchedRange) as Array<NSTextCheckingResult>
+        var  matchesLetters:NSArray = regexLetters.matchesInString(value as String, options: nil, range: searchedRange) as! Array<NSTextCheckingResult>
         
         for match in matchesLetters {
             attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.pastepasswdMainColor(), range: match.range)
